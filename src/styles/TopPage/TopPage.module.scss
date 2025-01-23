@@ -1,0 +1,6 @@
+@use '../Global/color' as *;
+
+.header{
+    background-color: $Primary;
+    height: 10vh;
+}
