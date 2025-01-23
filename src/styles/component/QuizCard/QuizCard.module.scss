@@ -1,0 +1,50 @@
+@use '../../Global/color' as *;
+
+.card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    background-color: $Secondary;
+    width: 80%;
+    height: 10vh;
+    border: 3px solid $Primary;
+    border-radius: 10px;
+}
+
+.string {
+    display: flex;
+    flex-direction: column;
+
+    text-align: left;
+}
+
+.title {
+	font-size: 24px;
+    color: $Primary;
+    margin-left: 10px;
+}
+
+.score {
+    font-size: 15px;
+    color: $Primary;
+    margin-left: 15px;
+    margin-top: 15px;
+}
+
+.Bold {
+    font-weight: bold;
+}
+
+.customButton {
+	background-color: $Primary;
+	color: $onWhile;
+	border-radius: 15px;
+    border: none;
+    font-size: 24px;
+    width: 100px;
+    height: 40px;
+
+    margin-top: 40px;
+    margin-right: 10px;
+}
