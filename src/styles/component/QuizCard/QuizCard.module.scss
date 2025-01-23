@@ -2,13 +2,21 @@
 
 .card {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
 
     background-color: $Secondary;
     width: 80%;
     height: 10vh;
     border: 3px solid $Primary;
     border-radius: 10px;
+}
+
+.string {
+    display: flex;
+    flex-direction: column;
+
+    text-align: left;
 }
 
 .title {
@@ -26,4 +34,17 @@
 
 .Bold {
     font-weight: bold;
+}
+
+.customButton {
+	background-color: $Primary;
+	color: $onWhile;
+	border-radius: 15px;
+    border: none;
+    font-size: 24px;
+    width: 100px;
+    height: 40px;
+
+    margin-top: 40px;
+    margin-right: 10px;
 }
