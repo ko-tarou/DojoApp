@@ -1,0 +1,29 @@
+@use '../Global/color.scss' as *;
+
+.quizpage {
+    display: flex;
+}
+
+.quiz {
+    display: flex;
+    flex-direction: column;
+    margin: 50px;
+    gap:5px;
+    width: 50%;
+    box-sizing: border-box;
+}
+
+.title {
+    color: $Primary;
+    font-size: 64px;
+}
+
+.question {
+    color: $Primary;
+    font-size: 40px;
+}
+
+.container {
+    color: $Primary;
+    font-size: 24px;
+}
