@@ -1,4 +1,4 @@
-import { collection, addDoc, getDocs, doc, setDoc, deleteDoc } from "firebase/firestore";
+import { collection, addDoc, getDocs, doc, setDoc, deleteDoc,query,where } from "firebase/firestore";
 import { db } from "../../firebase"; // Firebase設定ファイルをインポート
 
 const quizCollection = collection(db, "quiz"); // /quiz コレクションへの参照
@@ -53,4 +53,24 @@ try {
 	console.error("Error deleting quiz:", error);
 	throw error;
 }
+};
+
+// 特定のタイトルに一致するクイズを取得
+export const getQuizByTitle = async (title) => {
+	try {
+	  const quizQuery = query(
+		collection(db, "quiz"), // "quiz"コレクションを参照
+		where("name", "==", title) // "name"フィールドがtitleに一致するものを検索
+	  );
+	  const querySnapshot = await getDocs(quizQuery);
+	  if (!querySnapshot.empty) {
+		// 最初の一致するドキュメントを返す
+		return querySnapshot.docs[0].data();
+	  } else {
+		return null; // 一致するデータがない場合
+	  }
+	} catch (error) {
+	  console.error("Error getting quiz by title:", error);
+	  throw error;
+	}
 };
